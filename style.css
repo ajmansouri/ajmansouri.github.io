@@ -1,0 +1,101 @@
+/*the below styles apply to all elements * but not sudo elements that is whay we need the *:before and *:after*/
+*, *:before, *:after {
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+/*GLOBAL STYLES*/
+.responsive-img {
+  height:auto;
+  max-width: 100%;
+}
+.text-item {
+  font-size: 5vw;
+}
+.text-hdr {
+font-size: 7vw;
+}
+/*END GLOBAL STYLES*/
+.header {
+  text-align: center;
+  margin-bottom:30px;
+  margin-top:10px;
+  border-bottom: 5px solid #7d97ad;
+  color: #2d3c49;
+}
+.content-hdr {
+  color:#7d97ad;
+  /*text-align: left;*/
+  margin:auto;
+  max-width: 935px;
+}
+.featured-item {
+  text-align: center;
+  color:#2d3c49;
+}
+.featured-work {
+  margin-top: 30px
+}
+.featured-item {
+  max-width: 935px;
+  margin: 20px auto 0 auto;
+}
+
+@media screen and (min-width:480px) {
+  .text-hdr {
+    font-size: 6vw;
+  }
+  .text-item {
+    font-size: 4vw;
+  }
+  .featured-img {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width:720px) {
+.header {
+  justify-content: space-between;
+  margin:0 auto 30px;
+  text-align: left;
+}
+.header-text {
+  text-align: right;
+  margin: 10px 15px;
+}
+  .header,
+  .featured {
+    display: flex;
+    max-width: 935px;
+  }
+  .featured {
+    margin: auto;
+  }
+
+  .featured-item {
+    margin:20px 20px 20px 0;
+  }
+  .featured-item:last-child {
+    margin-right: 0;
+  }
+ .main-img {
+    max-width: 935px;
+    margin: auto;
+  }
+  .text-hdr {
+    font-size: 4vw;
+  }
+  .text-item {
+    font-size: 2vw;
+  }
+
+}
+
+@media screen and (min-width:1024px) {
+  .text-hdr{
+    font-size: 3vw;
+  }
+  .text-item {
+    font-size: 2vw;
+  }
+}
