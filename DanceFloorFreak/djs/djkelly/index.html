@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dance Floor Freak - DJ Kelly</title>
+    <meta name="description" content="dance,floor,freak,dj,dancefloorfreak">
+    <meta name="keywords" content="dance,floor,freak,dj,dancefloorfreak,mixing,clubbing,illinois,indiana,midwest">
+    
+    <!-- Relative paths to parent directories -->
+    <link rel="stylesheet" type="text/css" href="../../global/style.css">
+    
+    <script src="../../global/header.js"></script>
+    <script src="../../global/wmjava.js"></script>
+    <script src="../../global/rollover.js"></script>
+    <script src="../../global/protect.js"></script>
+
+    <style>
+        body {
+            background-color: #000;
+            margin: 0;
+            padding: 0;
+            color: #ccc;
+        }
+        .main-wrapper {
+            width: 840px;
+            margin: 0 auto;
+            background-color: #000;
+            min-height: 100vh;
+        }
+        .header-flash {
+            width: 840px;
+            height: 152px;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            overflow: hidden;
+        }
+        .header-turntable {
+            width: 180px;
+            height: 152px;
+            object-fit: contain;
+            transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.5s ease;
+        }
+        .turntable-hidden {
+            opacity: 0;
+            transform: translateY(-150px);
+        }
+        .header-title-gif {
+            max-height: 140px;
+            height: auto;
+        }
+        .content-layout {
+            display: flex;
+            align-items: stretch;
+            background-image: url('../../global/bg_bottom.jpg');
+            background-repeat: repeat;
+        }
+        .side-menu {
+            width: 120px;
+            background-image: url('../../global/menubg.jpg');
+            text-align: center;
+        }
+        .main-content {
+            width: 720px;
+            background-color: #000;
+            vertical-align: top;
+            padding: 10px;
+        }
+        .menu-item img {
+            display: block;
+            border: 0;
+        }
+        #sound-btn {
+            background-color: #111111;
+            color: #ff0000;
+            border: 1px solid #ff0000;
+            padding: 5px 8px;
+            font-size: 9px;
+            font-family: Arial, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            width: 90%;
+            box-sizing: border-box;
+        }
+        #sound-btn:hover {
+            background-color: #ff0000;
+            color: #ffffff;
+        }
+
+        /* --- Retro Yellow Capsule Navigation Console --- */
+        .dj-nav-capsule {
+            width: 260px;
+            height: 52px;
+            margin: 0 auto 15px auto;
+            background: linear-gradient(180deg, #ffd700 0%, #998000 15%, #000000 50%, #443a00 85%, #ffd700 100%);
+            border: 2px solid #ffd700;
+            border-radius: 30px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 2px 10px;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.4), inset 0 0 5px #000;
+        }
+        .knob-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .knob-label {
+            font-family: "Arial Black", Impact, sans-serif;
+            font-size: 10px;
+            color: #ffd700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 2px;
+            text-shadow: 0 0 3px #000;
+        }
+        .knob-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 35% 35%, #666, #111);
+            border: 1px solid #888;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.8);
+            position: relative;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .knob-icon::after {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 10px;
+            width: 2px;
+            height: 6px;
+            background-color: #ffd700;
+            border-radius: 1px;
+        }
+        .knob-item:hover .knob-icon {
+            transform: rotate(45deg);
+            border-color: #ffd700;
+            box-shadow: 0 0 8px #ffd700;
+        }
+        .knob-item:hover .knob-label {
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="main-wrapper">
+    
+    <!-- Standard Header -->
+    <div class="header-flash">
+        <img id="turntable-left" src="../../global/HeaderTurntable.png" alt="Turntable Left" class="header-turntable turntable-hidden">
+        <img src="../../global/HeaderTitle.gif" alt="Dance Floor Freak" class="header-title-gif">
+        <img id="turntable-right" src="../../global/HeaderTurntable.png" alt="Turntable Right" class="header-turntable turntable-hidden">
+    </div>
+
+    <div class="content-layout">
+        
+        <!-- Navigation Sidebar -->
+        <nav class="side-menu">
+            <a href="../../home/index.html" class="menu-item" onmouseover="image1.src='../../global/links/1a.jpg';" onmouseout="image1.src='../../global/links/1.jpg';">
+                <img name="image1" src="../../global/links/1.jpg" alt="Home">
+            </a>
+            <a href="../index.html" class="menu-item" onmouseover="image2.src='../../global/links/2a.jpg';" onmouseout="image2.src='../../global/links/2.jpg';">
+                <img name="image2" src="../../global/links/2.jpg" alt="DJs">
+            </a>
+            <a href="../../news/index.html" class="menu-item" onmouseover="image3.src='../../global/links/3a.jpg';" onmouseout="image3.src='../../global/links/3.jpg';">
+                <img name="image3" src="../../global/links/3.jpg" alt="News">
+            </a>
+            <a href="../../pics/index.html" class="menu-item" onmouseover="image4.src='../../global/links/4a.jpg';" onmouseout="image4.src='../../global/links/4.jpg';">
+                <img name="image4" src="../../global/links/4.jpg" alt="Pix">
+            </a>
+            <a href="../../guestbook/index.html" class="menu-item" onmouseover="image5.src='../../global/links/5a.jpg';" onmouseout="image5.src='../../global/links/5.jpg';">
+                <img name="image5" src="../../global/links/5.jpg" alt="Guestbook">
+            </a>
+            <a href="../../links/index.html" class="menu-item" onmouseover="image6.src='../../global/links/6a.jpg';" onmouseout="image6.src='../../global/links/6.jpg';">
+                <img name="image6" src="../../global/links/6.jpg" alt="Links">
+            </a>
+            
+            <div style="padding: 15px 5px; text-align: center;">
+                <button id="sound-btn" onclick="toggleMainSound()">🔊 Sound</button>
+            </div>
+
+            <img src="../../global/blank.gif" width="120" height="50">
+        </nav>
+
+        <main class="main-content">
+
+            <audio id="bgAudio" src="../djloop.mp3" loop preload="auto"></audio>
+
+            <div style="width: 100%; background-color: #000; padding-top: 15px;">
+                
+                <div style="display: flex; justify-content: center; align-items: flex-start; gap: 10px; max-width: 700px; margin: 0 auto;">
+                    
+                    <!-- DJ Kelly Left Photo -->
+                    <div style="flex: 0 0 200px;">
+                        <img src="profile/left.jpg" width="200" height="386" alt="DJ Kelly Left" style="display: block;">
+                    </div>
+
+                    <!-- Center Navigation & Profile Area -->
+                    <div style="flex: 1; text-align: center; color: #cccccc; font-family: Arial, sans-serif;">
+                        
+                        <!-- Yellow Capsule Navigation Console -->
+                        <div class="dj-nav-capsule">
+                           <a href="bio.html" class="knob-item">
+                                <span class="knob-label">BIO</span>
+                                <div class="knob-icon"></div>
+                            </a>
+                            <a href="top10.html" class="knob-item">
+                                <span class="knob-label">TOP 10</span>
+                                <div class="knob-icon"></div>
+                            </a>
+                            <a href="music.html" class="knob-item">
+                                <span class="knob-label">MUSIC</span>
+                                <div class="knob-icon"></div>
+                            </a>
+                            <a href="contact.html" class="knob-item">
+                                <span class="knob-label">CONTACT</span>
+                                <div class="knob-icon"></div>
+                            </a>
+                        </div>
+
+                        <!-- Stylized Title -->
+                        <div style="font-family: 'Brush Script MT', cursive, Georgia, serif; font-size: 38px; color: #ccc; margin-bottom: 15px; text-shadow: 2px 2px 4px #ff0000;">
+                            dj kelly
+                        </div>
+
+                        <!-- DJ Kelly Bottom Center Photo -->
+                        <img src="profile/bottom.jpg" width="230" height="202" alt="DJ Kelly Center" style="display: block; margin: 0 auto;">
+                    </div>
+
+                    <!-- DJ Kelly Right Photo -->
+                    <div style="flex: 0 0 200px;">
+                        <img src="profile/right.jpg" width="200" height="386" alt="DJ Kelly Right" style="display: block;">
+                    </div>
+
+                </div>
+            </div>
+
+        </main> 
+    </div> 
+
+    <!-- Footer Easter Egg -->
+    <footer style="width: 100%; background-color: #000; padding: 10px 0; text-align: center; border-top: 1px solid #111;">
+        <p style="font-size: 10px; color: #333333; margin: 0; font-family: Arial, sans-serif;">
+            <span style="margin-left: 20px;">
+                <a href="javascript:void(0)" title="🔒 Secret DJ Admin Portal (Definitely don't click this)" style="color: #111111; text-decoration: none; cursor: default;">Mirage</a>&nbsp;
+                <a href="javascript:void(0)" title="⚠️ Authorized Personnel Only: Password is 'password123'" style="color: #111111; text-decoration: none; cursor: default;">Will</a>&nbsp;
+                <a href="javascript:void(0)" title="🕵️ Nothing to see here... move along" style="color: #111111; text-decoration: none; cursor: default;">Kelly</a>
+            </span>
+        </p>
+    </footer>
+
+</div> 
+</body>
+</html>

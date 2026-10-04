@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dance Floor Freak - DJs</title>
+    <meta name="description" content="dance,floor,freak,dj,dancefloorfreak">
+    <meta name="keywords" content="dance,floor,freak,dj,dancefloorfreak,mixing,clubbing,illinois,indiana,midwest">
+    
+    <!-- Relative paths to global stylesheets and JS -->
+    <link rel="stylesheet" type="text/css" href="../global/style.css">
+    
+    <script src="../global/header.js"></script>
+    <script src="../global/wmjava.js"></script>
+    <script src="../global/rollover.js"></script>
+    <script src="../global/protect.js"></script>
+
+    <style>
+        body {
+            background-color: #000;
+            margin: 0;
+            padding: 0;
+            color: #ccc;
+        }
+        .main-wrapper {
+            width: 840px;
+            margin: 0 auto;
+            background-color: #000;
+            min-height: 100vh;
+        }
+        .header-flash {
+            width: 840px;
+            height: 152px;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            overflow: hidden;
+        }
+        .header-turntable {
+            width: 180px;
+            height: 152px;
+            object-fit: contain;
+            transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.5s ease;
+        }
+        .turntable-hidden {
+            opacity: 0;
+            transform: translateY(-150px);
+        }
+        .header-title-gif {
+            max-height: 140px;
+            height: auto;
+        }
+        .content-layout {
+            display: flex;
+            align-items: stretch;
+            background-image: url('../global/bg_bottom.jpg');
+            background-repeat: repeat;
+        }
+        .side-menu {
+            width: 120px;
+            background-image: url('../global/menubg.jpg');
+            text-align: center;
+        }
+        .main-content {
+            width: 720px;
+            background-color: #000;
+            vertical-align: top;
+            padding: 10px;
+        }
+        .menu-item img {
+            display: block;
+            border: 0;
+        }
+        #sound-btn {
+            background-color: #111111;
+            color: #ff0000;
+            border: 1px solid #ff0000;
+            padding: 5px 8px;
+            font-size: 9px;
+            font-family: Arial, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            width: 90%;
+            box-sizing: border-box;
+        }
+        #sound-btn:hover {
+            background-color: #ff0000;
+            color: #ffffff;
+        }
+
+        /* Record Rotation Animation */
+        @keyframes spinRecord {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        .record-img {
+            width: 225px;
+            height: 225px;
+            cursor: pointer;
+            border-radius: 50%; /* Keeps image rotation clean */
+            transition: transform 0.2s ease-in-out;
+        }
+        .record-img:hover {
+            animation: spinRecord 2s linear infinite;
+        }
+    </style>
+</head>
+<body>
+
+<div class="main-wrapper">
+    
+    <!-- Standardized Header -->
+    <div class="header-flash">
+        <img id="turntable-left" 
+             src="../global/HeaderTurntable.png" 
+             alt="Turntable Left" 
+             class="header-turntable turntable-hidden">
+
+        <img src="../global/HeaderTitle.gif" 
+             alt="Dance Floor Freak" 
+             class="header-title-gif">
+
+        <img id="turntable-right" 
+             src="../global/HeaderTurntable.png" 
+             alt="Turntable Right" 
+             class="header-turntable turntable-hidden">
+    </div>
+
+    <div class="content-layout">
+        
+        <!-- Navigation Sidebar -->
+        <nav class="side-menu">
+            <a href="../home/index.html" class="menu-item" onmouseover="image1.src='../global/links/1a.jpg';" onmouseout="image1.src='../global/links/1.jpg';">
+                <img name="image1" src="../global/links/1.jpg" alt="Home">
+            </a>
+            <a href="index.html" class="menu-item" onmouseover="image2.src='../global/links/2a.jpg';" onmouseout="image2.src='../global/links/2.jpg';">
+                <img name="image2" src="../global/links/2.jpg" alt="DJs">
+            </a>
+            <a href="../news/index.html" class="menu-item" onmouseover="image3.src='../global/links/3a.jpg';" onmouseout="image3.src='../global/links/3.jpg';">
+                <img name="image3" src="../global/links/3.jpg" alt="News">
+            </a>
+            <a href="../pics/index.html" class="menu-item" onmouseover="image4.src='../global/links/4a.jpg';" onmouseout="image4.src='../global/links/4.jpg';">
+                <img name="image4" src="../global/links/4.jpg" alt="Pix">
+            </a>
+            <a href="../guestbook/index.html" class="menu-item" onmouseover="image5.src='../global/links/5a.jpg';" onmouseout="image5.src='../global/links/5.jpg';">
+                <img name="image5" src="../global/links/5.jpg" alt="Guestbook">
+            </a>
+            <a href="../links/index.html" class="menu-item" onmouseover="image6.src='../global/links/6a.jpg';" onmouseout="image6.src='../global/links/6.jpg';">
+                <img name="image6" src="../global/links/6.jpg" alt="Links">
+            </a>
+            
+            <div style="padding: 15px 5px; text-align: center;">
+                <button id="sound-btn" onclick="toggleMainSound()">🔊 Sound</button>
+            </div>
+
+            <img src="../global/blank.gif" width="120" height="50">
+        </nav>
+
+        <main class="main-content">
+
+            <audio id="bgAudio" src="djloop.mp3" loop preload="auto"></audio>
+
+            <div style="width: 100%; text-align: center; padding-top: 15px;">
+                <div style="margin-bottom: 30px;">
+                    <h2 style="font-size: 20px; color: #666666; font-family: Arial, sans-serif; font-weight: normal; font-style: italic;">
+                        Choose one of the DJ's by clicking on a record
+                    </h2>
+                </div>
+
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 800px; margin: 0 auto;">
+                    
+                    <!-- DJ Mirage -->
+                    <div style="width: 225px; height: 225px; background-color: #000; display: flex; align-items: center; justify-content: center;">
+                        <a href="djmirage/index.html">
+                            <img src="mirage.png" alt="DJ Mirage" class="record-img">
+                        </a>
+                    </div>
+
+                    <!-- DJ Will -->
+                    <div style="width: 225px; height: 225px; background-color: #000; display: flex; align-items: center; justify-content: center;">
+                        <a href="djwill/index.html">
+                            <img src="will.png" alt="DJ Will" class="record-img">
+                        </a>
+                    </div>
+
+                    <!-- DJ Kelly -->
+                    <div style="width: 225px; height: 225px; background-color: #000; display: flex; align-items: center; justify-content: center;">
+                        <a href="djkelly/index.html">
+                            <img src="kelly.png" alt="DJ Kelly" class="record-img">
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+        </main> 
+    </div> 
+
+    <!-- Interactive Footer Easter Egg -->
+    <footer style="width: 100%; background-color: #000; padding: 10px 0; text-align: center; border-top: 1px solid #111;">
+        <p style="font-size: 10px; color: #333333; margin: 0; font-family: Arial, sans-serif;">
+            <span style="margin-left: 20px;">
+                <a href="javascript:void(0)" 
+                   title="🔒 Secret DJ Admin Portal (Definitely don't click this)" 
+                   style="color: #111111; text-decoration: none; cursor: default;">Mirage</a>&nbsp;
+                <a href="javascript:void(0)" 
+                   title="⚠️ Authorized Personnel Only: Password is 'password123'" 
+                   style="color: #111111; text-decoration: none; cursor: default;">Will</a>&nbsp;
+                <a href="javascript:void(0)" 
+                   title="🕵️ Nothing to see here... move along" 
+                   style="color: #111111; text-decoration: none; cursor: default;">Kelly</a>
+            </span>
+        </p>
+    </footer>
+
+</div> 
+</body>
+</html>

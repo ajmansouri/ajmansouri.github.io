@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Knight Puzzle</title>
+    <link rel="stylesheet" href="BlackKnightPuzzle.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Double-click title for Secret Auto-Solve Easter Egg! -->
+        <h1 id="gameTitle" title="Double-click for a magic solution! ✨">Black Knight Puzzle</h1>
+        
+        <!-- Game Status & Action Controls -->
+        <div class="stats-bar">
+            <div class="stat-box">
+                <span class="stat-label">Moves:</span>
+                <span id="moveCount" class="stat-value">0</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-label">Time:</span>
+                <span id="timer" class="stat-value">00:00</span>
+            </div>
+            <div class="button-group">
+                <button id="hintBtn" class="control-btn hint-btn" title="Get a Hint">💡 Hint</button>
+                <button id="undoBtn" class="control-btn" title="Undo Last Move">↩ Undo</button>
+                <button id="resetBtn" class="control-btn" title="Reset Game">🔄 Reset</button>
+                <button id="secretSolveBtn" class="secret-btn" title="Secret Auto-Solve">✨</button>
+            </div>
+        </div>
+
+        <!-- Main Gameplay Layout (Board + Right Side High Score Box) -->
+        <div class="game-main-layout">
+            <div class="board-wrapper">
+                <div class="board" id="gameBoard"></div>
+                <div id="startOverlay" class="start-overlay">
+                    <button id="startBtn" class="start-btn">Start Game</button>
+                </div>
+                <canvas id="fireworksCanvas"></canvas>
+            </div>
+
+            <!-- New High Score Side Box (Hidden until user wins with top score) -->
+            <div id="highscoreSideBox" class="highscore-side-box hidden">
+                <div class="side-box-content">
+                    <h3>🏆 High Score!</h3>
+                    <p>You made the top 5!</p>
+                    <div class="score-summary">
+                        <div><strong id="finalTimeDisplay">00:00</strong></div>
+                        <div><span id="finalMovesDisplay">0</span> moves</div>
+                    </div>
+                    <input type="text" id="playerNameInput" placeholder="Enter Name" maxlength="15" autocomplete="off" />
+                    <button id="saveScoreBtn" class="save-score-btn">Save Score</button>
+                </div>
+            </div>
+        </div>
+
+        <p id="message">Move the pieces to guide the Black Knight to the black square!</p>
+
+        <!-- Leaderboard Table -->
+        <div class="leaderboard-section">
+            <h2>Top 5 High Scores</h2>
+            <table class="leaderboard-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Player</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Moves</th>
+                    </tr>
+                </thead>
+                <tbody id="leaderboardBody">
+                    <!-- Populated via JS -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="BlackKnightPuzzle.js"></script>
+</body>
+</html>

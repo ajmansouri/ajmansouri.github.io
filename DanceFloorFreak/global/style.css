@@ -1,0 +1,284 @@
+body 	{
+	font-family: "Arial";
+	font-size: 8pt;
+	color: #999999;
+	background: black;
+	margin-left: 0pt;
+	margin-right: 0pt;
+	background-image: url(/global/background.jpg);
+	}
+
+/* Browser specific (not valid) styles to make preformatted text wrap */		
+
+pre {
+ white-space: pre-wrap;       /* css-3 */
+ white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+ white-space: -pre-wrap;      /* Opera 4-6 */
+ white-space: -o-pre-wrap;    /* Opera 7 */
+ word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+table	{
+	background-repeat: "repeat";
+	}
+
+td	{
+	font-family: "Arial";
+	font-size: 10pt;
+	color: #999999;
+	}
+
+p	{margin-left: 24pt;
+	margin-right: 24pt;}
+
+a 	{text-decoration: none;}
+
+a:link 	{color: orange;}
+
+a:visited 	{color: orange;}
+
+a:active 	{color: orange;}
+
+a:hover         {color: yellow;}
+
+div.footnote 	{font-size: 9pt;
+		line-height: 12pt;
+		text-align: center;}
+
+
+/*// Webmail (wwwmail) stylesheet*/
+
+.textbox {
+		color : Black;
+		background-color : #F5FFFA;
+		height : 19px;
+		font-size : 12px;
+	}
+
+.formfield {
+		border-color : #666699 #666699 #666699 #666699;
+		border-width : 1 1 1 1;
+		color : Black; background-color : #99CCFF;
+		height : 19px; font-size : 12px;
+	}
+
+.button{
+		color : Black;
+		background-color : #F5FFFA;
+		height : 19px;
+		font-size : 12px;
+	}
+	
+
+.menu { font-family : arial; font-size : 8pt; color : #004080; }
+.menu:link { font-family : arial; font-size : 8pt;color : #004080;  }
+.menu:hover { font-family : arial; font-size : 8pt;color : #004080;  }
+.menu:visited { font-family : arial; font-size : 8pt;color : #004080;  }
+
+.navigation { font-family : arial; font-size : 8pt;color : #004080; }
+.navigation:link { text-decoration: none; font-family : arial; font-size : 8pt;color : #004080;  }
+.navigation:hover { text-decoration: none; font-family : arial; font-size : 8pt;color : #004080;  }
+.navigation:visited { text-decoration: none; font-family : arial; font-size : 8pt;color : #004080; }
+
+.autolink:link { text-decoration: underline; font-family : arial; font-size : 9pt; color : #004080; }
+.autolink:hover { text-decoration: underline; font-family : arial; font-size : 9pt; color : #004080; }
+.autolink:visited { text-decoration: underline; font-family : arial; font-size : 9pt; color : #004080; }
+
+TD.rempli { font-family : arial; background-color : #66CC99;}
+TD.memo { font-family : arial; background-color: #E8E8E8;}
+TD.cent { font-family : arial; background-color: #E8E8E8; text-align: center; font-size : 8pt; color: Black;}
+TD.right { font-family : arial; background-color: #E8E8E8; text-align: right; font-size : 8pt; color: Black;}
+TD.headers { font-family : arial; background-color : #CFCFCF; text-align : center; font-size : 8pt; color:  #004080;  }
+TD.default { font-family : arial; background-color : #E8E8E8; font-size : 8pt;color : Black; }
+TD.default9 { font-family : arial; background-color : #E8E8E8; font-size : 9pt;color : Black; }
+TD.title { font-family : arial; color: #191970; background-color : #B0C4DE; text-align : center; font-size : 8pt;}
+TD.headerright { font-family : arial; color: #004080; background-color : #CFCFCF; text-align : right;  font-size : 8pt; }
+
+SELECT 	{ font-size : 8pt; }
+
+
+
+/*
+// ltw_style.css
+// $Id: ltw_style.css,v 1.3 2003/08/20 02:35:43 t51admin Exp $
+// 
+// ltwCalendar Style Sheet 
+*/
+a.prevnext:link {color: #cc0099; font-size: 10px; text-decoration:underline}
+a.prevnext:visited {color: #cc0099; font-size: 10px; text-decoration:underline}
+a.prevnext:hover {color: yellow; font-size: 10px; text-decoration:underline}
+a.prevnext:active {color: #cc0099; font-size: 10px; text-decoration:underline}
+
+a.day:link {color: pink; font-size: 12px; text-decoration:underline}
+a.day:visited {color: pink; font-size: 12px; text-decoration:underline}
+a.day:hover {color: yellow; font-size: 12px; text-decoration:underline}
+a.day:active {color: pink; font-size: 12px; text-decoration:underline}
+
+a.event:link {color: blue; font-size: 10px; text-decoration:underline}
+a.event:visited {color: blue; font-size: 10px; text-decoration:underline}
+a.event:hover {color: red; font-size: 10px; text-decoration:underline}
+a.event:active {color: blue; font-size: 10px; text-decoration:underline}
+
+a.admin:link {color: blue; font-size: 10px; text-decoration:underline}
+a.admin:visited {color: blue; font-size: 10px; text-decoration:underline}
+a.admin:hover {color: red; font-size: 10px; text-decoration:underline}
+a.admin:active {color: blue; font-size: 10px; text-decoration:underline}
+
+table.cal {
+background-color: #111111;
+height: 600px;
+border-style: none;
+border-width: 3px;
+font-family: sans-serif
+}
+
+.caption {
+color: white;
+font-size: 28px;
+font-weight: bold;
+}
+
+.thead {
+color:white;
+background-color: darkblue;
+font-size: 12px;
+}
+
+td.cal {
+background-color: #222222;
+text-align: left;
+vertical-align: top
+}
+
+tfoot.cal {
+color:black;
+background-color: #111111;
+font-size: 10px;
+text-align: left
+}
+
+ul.cal {
+margin: 0px;
+list-style-position: inside
+}
+
+.cal-admin-link {
+color: #999999;
+font-family: Tahoma, Verdana, sans-serif;
+font-size: 10px;
+font-weight: bold;
+text-decoration: none;
+}
+.header-flash {
+    width: 840px;
+    height: 152px;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.header-turntable {
+    width: 180px; /* Adjust based on your turntable image size */
+    height: 152px;
+    object-fit: contain;
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.5s ease;
+}
+
+/* Initial state before drop-in animation runs */
+.turntable-hidden {
+    opacity: 0;
+    transform: translateY(-150px);
+}
+
+.header-title-gif {
+    max-height: 140px;
+    height: auto;
+}
+.audio-controls {
+    text-align: center;
+    padding: 8px 0;
+    background-color: #000;
+}
+
+#sound-btn {
+    background-color: #111111;
+    color: #ff0000;
+    border: 1px solid #ff0000;
+    padding: 5px 10px;
+    font-size: 10px;
+    font-family: Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+#sound-btn:hover {
+    background-color: #ff0000;
+    color: #ffffff;
+}
+#sound-btn {
+    background-color: #111111;
+    color: #ff0000;
+    border: 1px solid #ff0000;
+    padding: 5px 8px;
+    font-size: 9px;
+    font-family: Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    width: 90%; /* Scale nicely inside the 120px sidebar */
+    box-sizing: border-box;
+}
+
+#sound-btn:hover {
+    background-color: #ff0000;
+    color: #ffffff;
+}
+/* Continuous spinning record animation */
+@keyframes spinRecord {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.record-img {
+    width: 225px;
+    height: 225px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Trigger spin on hover */
+.record-img:hover {
+    animation: spinRecord 2s linear infinite;
+}
+/* Modal Lightbox Styles */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .modal-overlay img {
+            max-width: 90%;
+            max-height: 85vh;
+            border: 2px solid #ffd700;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            border-radius: 4px;
+        }
+        .zoo-item img {
+            cursor: pointer;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .zoo-item img:hover {
+            transform: scale(1.05);
+            border-color: #ffd700;
+        }

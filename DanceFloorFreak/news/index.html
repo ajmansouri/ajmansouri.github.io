@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dance Floor Freak - News</title>
+    <meta name="description" content="dance,floor,freak,dj,dancefloorfreak,news">
+    <meta name="keywords" content="dance,floor,freak,dj,dancefloorfreak,mixing,clubbing,illinois,indiana,midwest,news">
+    
+    <!-- Relative paths to global directory from /news/ -->
+    <link rel="stylesheet" type="text/css" href="../global/style.css">
+    
+    <script src="../global/header.js"></script>
+    <script src="../global/wmjava.js"></script>
+    <script src="../global/rollover.js"></script>
+    <script src="../global/protect.js"></script>
+
+    <style>
+        body {
+            background-color: #000;
+            margin: 0;
+            padding: 0;
+            color: #ccc;
+        }
+        .main-wrapper {
+            width: 840px;
+            margin: 0 auto;
+            background-color: #000;
+            min-height: 100vh;
+        }
+        .header-flash {
+            width: 840px;
+            height: 152px;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            overflow: hidden;
+        }
+        .header-turntable {
+            width: 180px;
+            height: 152px;
+            object-fit: contain;
+            transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.5s ease;
+        }
+        .turntable-hidden {
+            opacity: 0;
+            transform: translateY(-150px);
+        }
+        .header-title-gif {
+            max-height: 140px;
+            height: auto;
+        }
+        .content-layout {
+            display: flex;
+            align-items: stretch;
+            background-image: url('../global/bg_bottom.jpg');
+            background-repeat: repeat;
+        }
+        .side-menu {
+            width: 120px;
+            background-image: url('../global/menubg.jpg');
+            text-align: center;
+        }
+        .main-content {
+            width: 720px;
+            background-color: #000;
+            vertical-align: top;
+            padding: 10px;
+        }
+        .menu-item img {
+            display: block;
+            border: 0;
+        }
+        #sound-btn {
+            background-color: #111111;
+            color: #ff0000;
+            border: 1px solid #ff0000;
+            padding: 5px 8px;
+            font-size: 9px;
+            font-family: Arial, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            width: 90%;
+            box-sizing: border-box;
+        }
+        #sound-btn:hover {
+            background-color: #ff0000;
+            color: #ffffff;
+        }
+        .news-box {
+            background-color: #111111;
+            border: 1px solid #222;
+            padding: 25px;
+            line-height: 1.8;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #cccccc;
+            text-align: left;
+            box-shadow: inset 0 0 10px #000000;
+        }
+        .news-box p {
+            margin-bottom: 20px;
+        }
+        .news-box iframe {
+            display: block;
+            margin: 25px auto 0 auto;
+            max-width: 100%;
+            border: 1px solid #333;
+        }
+        .return-link {
+            color: #555555;
+            text-decoration: none;
+            font-size: 12px;
+            text-transform: uppercase;
+            transition: color 0.2s ease;
+        }
+        .return-link:hover {
+            color: #ff0000;
+        }
+    </style>
+</head>
+<body>
+
+<div class="main-wrapper">
+    
+    <!-- Shared Header -->
+    <div class="header-flash">
+        <img id="turntable-left" src="../global/HeaderTurntable.png" alt="Turntable Left" class="header-turntable turntable-hidden">
+        <img src="../global/HeaderTitle.gif" alt="Dance Floor Freak" class="header-title-gif">
+        <img id="turntable-right" src="../global/HeaderTurntable.png" alt="Turntable Right" class="header-turntable turntable-hidden">
+    </div>
+
+    <div class="content-layout">
+        
+        <!-- Navigation Sidebar -->
+        <nav class="side-menu">
+            <a href="../home/index.html" class="menu-item" onmouseover="image1.src='../global/links/1a.jpg';" onmouseout="image1.src='../global/links/1.jpg';">
+                <img name="image1" src="../global/links/1.jpg" alt="Home">
+            </a>
+            <a href="../djs/index.html" class="menu-item" onmouseover="image2.src='../global/links/2a.jpg';" onmouseout="image2.src='../global/links/2.jpg';">
+                <img name="image2" src="../global/links/2.jpg" alt="DJs">
+            </a>
+            <a href="index.html" class="menu-item" onmouseover="image3.src='../global/links/3a.jpg';" onmouseout="image3.src='../global/links/3.jpg';">
+                <img name="image3" src="../global/links/3.jpg" alt="News">
+            </a>
+            <a href="../pics/index.html" class="menu-item" onmouseover="image4.src='../global/links/4a.jpg';" onmouseout="image4.src='../global/links/4.jpg';">
+                <img name="image4" src="../global/links/4.jpg" alt="Pix">
+            </a>
+            <a href="../guestbook/index.html" class="menu-item" onmouseover="image5.src='../global/links/5a.jpg';" onmouseout="image5.src='../global/links/5.jpg';">
+                <img name="image5" src="../global/links/5.jpg" alt="Guestbook">
+            </a>
+            <a href="../links/index.html" class="menu-item" onmouseover="image6.src='../global/links/6a.jpg';" onmouseout="image6.src='../global/links/6.jpg';">
+                <img name="image6" src="../global/links/6.jpg" alt="Links">
+            </a>
+            
+            <div style="padding: 15px 5px; text-align: center;">
+                <button id="sound-btn" onclick="toggleMainSound()">🔊 Sound</button>
+            </div>
+
+            <img src="../global/blank.gif" width="120" height="50">
+        </nav>
+
+        <main class="main-content">
+
+            <!-- Background Loop Audio -->
+            <audio id="bgAudio" src="newsloop.mp3" loop preload="auto"></audio>
+
+            <div style="width: 100%; background-color: #000; padding: 25px 15px; font-family: Arial, sans-serif; color: #cccccc; box-sizing: border-box;">
+
+                <div style="max-width: 680px; margin: 0 auto;">
+                    
+                    <!-- Page Heading -->
+                    <div style="border-bottom: 2px solid #ff0000; padding-bottom: 10px; margin-bottom: 25px;">
+                        <h1 style="color: #ff0000; text-transform: uppercase; letter-spacing: 2px; margin: 0; font-size: 26px;">
+                            Dance Floor Freak News
+                        </h1>
+                    </div>
+
+                    <!-- Embedded News Content -->
+                    <div class="news-box">
+                        <p>Peter Rauhofer Will release his new album "I love New York" On Tuesday The 7th of march. This flawless beatmix 2xCD has 24 incredible underground club tracks including 20 never released on CD before. This CD showcases Peter Rauhofer's versatile style and proves again why he is one of the most influential in this industry! He was also working on remixing Paris Hilton's new track "turn it up"</p>
+
+                        <p>Legendary German DJ Paul van Dyk was recently named #1 DJ in the world by DJ Magazine. A proven leader of his genre, van Dyk was one of the first artists to receive a Grammy nomination in the newly added category of Best Dance/Electronic album for his 2004 release Reflections. His latest album The Politics of Dancing Volume 2 was released last year and remains in the top 20 Electronic Album charts.</p>
+
+                        <p>A feature about Pet Shop Boys can be found in the latest (April) issue of the British "GQ" magazine. Pet Shop Boys are on the cover of the new issue of "The Word" magazine which goes on sale next week and contains a long interview with Chris and Neil. Their new single will be released On May 8th and is called "I'm With stupid". The New album "Fundamental" Will be released May 22nd.</p>
+
+                        <p>Robbie Rivera is Currently in the studio remixing the classic song: Sandy B "you make the world go round" for release soon on Champion UK.</p>
+
+                        <p>Madonna is set to make a guest appearance on The Simpsons, according to the Daily Star. The newspaper reports that the Queen of Pop will take a liking to Homer before going head-to-head with Marge in a battle for his heart. She will also grace the cover of the April 2006 issue of Out Magazine.</p>
+
+                        <p>Ralphi Rosario offers an exclusive unreleased dub remix of the Pussycat dolls "don't cha" for download just for visiting his site check it out.</p>
+
+                        <p>DJ Bill Bennet will not only be spinning at IML in chicago this year he will open the show Playing guitar. I hope I get to go.</p>
+
+                        <iframe src="../global/syndjs.html" width="100%" height="550" align="center" frameborder="1" scrolling="auto" name="syndjs">
+                            TEXT FOR NON-COMPATIBLE BROWSERS HERE
+                        </iframe>
+                    </div>
+
+                    <!-- Navigation Footer -->
+                    <div style="margin-top: 30px; text-align: center;">
+                        <a href="../home/index.html" class="return-link">
+                            &lt; Return Home
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+        </main> 
+    </div> 
+
+    <!-- Footer Easter Egg -->
+    <footer style="width: 100%; background-color: #000; padding: 10px 0; text-align: center; border-top: 1px solid #111;">
+        <p style="font-size: 10px; color: #333333; margin: 0; font-family: Arial, sans-serif;">
+            <span style="margin-left: 20px;">
+                <a href="javascript:void(0)" title="🔒 Secret DJ Admin Portal" style="color: #111111; text-decoration: none; cursor: default;">Mirage</a>&nbsp;
+                <a href="javascript:void(0)" title="⚠️ Authorized Personnel Only" style="color: #111111; text-decoration: none; cursor: default;">Will</a>&nbsp;
+                <a href="javascript:void(0)" title="🕵️ Nothing to see here" style="color: #111111; text-decoration: none; cursor: default;">Kelly</a>
+            </span>
+        </p>
+    </footer>
+
+</div> 
+
+</body>
+</html>

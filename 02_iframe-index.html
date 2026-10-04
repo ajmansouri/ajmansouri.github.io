@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Now Playing: Pat Mansouri</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <h2 id="homeBtn">Discography</h2>
+      <nav class="menu">
+        <div class="menu-item active" data-index="0" data-title="Self-Titled" data-sub="About Me" data-desc="About me, background and interests." data-img="about_me_minifig.png">
+          <div class="item-title">1. Self-Titled</div>
+          <span class="sub">About Me</span>
+        </div>
+        <div class="menu-item" data-index="1" data-title="Greatest Hits" data-sub="Interactive Resume" data-desc="Work history, skills, and education." data-img="resume_minifig.png">
+          <div class="item-title">2. Greatest Hits</div>
+          <span class="sub">Interactive Resume</span>
+        </div>
+        <div class="menu-item" data-index="2" data-title="B-Sides & Remixes" data-sub="Projects & Experiments" data-desc="Ideas, experiments and fun." data-img="projects_minifig.png">
+          <div class="item-title">3. B-Sides & Remixes</div>
+          <span class="sub">Projects & Experiments</span>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Center Display Panel -->
+    <main class="main-view">
+
+      <!-- SECTION 0: SELF-TITLED (ABOUT ME) -->
+      <div id="section-0" class="content-section active">
+        <!-- Stage 1: Preview Card -->
+        <div class="preview-card" style="background-image: url('about_me_minifig.png');">
+          <div class="preview-overlay">
+            <span class="badge">ALBUM</span>
+            <h1 class="preview-title">Self-Titled</h1>
+            <p class="preview-desc">
+              About me, background and interests.
+            </p>
+          </div>
+        </div>
+
+        <!-- Stage 2: Full Album View -->
+        <div class="album-container" style="display: none;">
+          <div class="album-header">
+            <img src="about_me_minifig.png" alt="Self-Titled Cover" class="album-cover">
+            <div class="album-details">
+              <span class="badge">ALBUM</span>
+              <h1 class="album-title">Self-Titled</h1>
+              <div class="album-meta">
+                <span class="artist-name">Pat Mansouri</span> • <span>2026</span> • <span>3 Tracks</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="album-body">
+            <section class="bio-section">
+              <h2>Album Notes</h2>
+              <p>
+                IT pro by day, endlessly curious the rest of the time. I'm a creative nerd with a growing collection of tech toys, always chasing new experiences and anything that teaches me something. I love exploring new cultures, learning new skills, and finding inspiration in life's little creative corners.
+              </p>
+            </section>
+
+            <section class="tracks-section">
+              <h2>Track List</h2>
+              
+              <div class="track-header-row">
+                <span class="th-num">#</span>
+                <span class="th-title">Title</span>
+                <span class="th-genre">Genre</span>
+              </div>
+
+              <!-- TRACK 1 -->
+             <div class="track-item" data-track-idx="0" data-title="Genesis" data-sub="Self-Titled" data-img="track1_genesis.png">
+                <div class="track-row">
+                  <div class="track-left">
+                    <div class="num-container">
+                      <span class="num">1</span>
+                      <span class="play-icon">▶</span>
+                    </div>
+                    <img src="track1_genesis.png" class="track-thumb" alt="Genesis Artwork" />
+                    <div class="title-meta">
+                      <span class="title">Genesis</span>
+                      <span class="click-hint">Click to expand story</span>
+                    </div>
+                  </div>
+                  <div class="track-right">
+                    <div class="equalizer-icon">
+                      <span></span><span></span><span></span>
+                    </div>
+                    <span class="genre-pill">About Me - Cinematic Pop</span>
+                  </div>
+                </div>
+                <div class="track-expanded-content">
+                  <div class="expanded-layout">
+                    <img src="track1_genesis.png" class="expanded-art" alt="Genesis Artwork Large" />
+                    <div class="expanded-text">
+                      <h3 class="expanded-title">1. Genesis</h3>
+                      <div class="lyrics-label">Lyrics:</div>
+                      <p>
+                        I was born in Arizona while my dad was finishing college, and we spent a few years there before moving to Saudi Arabia, where I grew up. Living overseas shaped a lot of who I am, I’m bilingual and can speak, read, and write in Arabic, though I’m a bit out of practice these days.<br><br>
+                        Being the oldest of four taught me early how to improvise, negotiate, and occasionally referee. My dad was a computer science major and had a Commodore 64, cutting‑edge at the time, and that’s where I first learned BASIC programming. It sparked a lifelong love of technology and creativity.<br><br>
+                        While most kids around me played soccer, I got hooked on basketball in middle school and kept playing through high school. This was during the golden era of Jordan, Magic, Pippen, Bird, and Rodman. My brother and I also made music together, experimenting with whatever gear we could get our hands on.<br><br>
+                        After high school, I moved to the U.S. for college and eventually landed at Purdue University. I started as an undecided major (a choice I don’t recommend), took time off to earn instate residency, and worked at Wabash National, which offered tuition reimbursement. That led to an associate degree in computer‑aided design at Ivy Tech, followed by a bachelor’s in mechanical engineering technology with a minor in computer graphics.<br><br>
+                        I’ve always loved animation, design, and music software, Photoshop, Acid, Magix, anything that lets me create something from nothing. One of my favorite memories is arriving in the U.S. having never used the internet. People tried to explain it as “a place you can look things up,” and I just didn’t get the appeal. Now I can’t imagine life without it.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TRACK 2 -->
+              <div class="track-item" data-track-idx="1" data-title="Where Love Lives" data-sub="Self-Titled" data-img="track2_wherelovelives.png">
+                <div class="track-row">
+                  <div class="track-left">
+                    <div class="num-container">
+                      <span class="num">2</span>
+                      <span class="play-icon">▶</span>
+                    </div>
+                    <img src="track2_wherelovelives.png" class="track-thumb" alt="Where Love Lives Artwork" />
+                    <div class="title-meta">
+                      <span class="title">Where Love Lives</span>
+                      <span class="click-hint">Click to expand story</span>
+                    </div>
+                  </div>
+                  <div class="track-right">
+                    <div class="equalizer-icon">
+                      <span></span><span></span><span></span>
+                    </div>
+                    <span class="genre-pill">Family - Adult Contemporary</span>
+                  </div>
+                </div>
+                <div class="track-expanded-content">
+                  <div class="expanded-layout">
+                    <img src="track2_wherelovelives.png" class="expanded-art" alt="Where Love Lives Artwork Large" />
+                    <div class="expanded-text">
+                      <h3 class="expanded-title">2. Where Love Lives</h3>
+                      <div class="lyrics-label">Lyrics:</div>
+                      <p>
+                        I live in Chicago with my partner, who patiently tolerates my LEGO obsession and makes sure I’m properly fed and functional. We’ve called this city home for more than fifteen years, and it still feels fresh every season.<br><br>
+                        My family is scattered across the globe, my dad in Oman, my mom and two siblings in Ireland, and I have a brother in Indiana, but we stay close. Thanks to WhatsApp, no one ever feels too far away; our group chats are a mix of jokes, updates, and the occasional photo of a new niece or nephew.<br><br>
+                        My partner’s family is from Oklahoma, big and wonderfully close knit. We visit as often as we can, trading Chicago skyscrapers for open skies and long conversations around the chiminea.<br><br>
+                        Our families are the people we lean on, the advisors, cheerleaders, and steady voices that make anywhere feel like home.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TRACK 3 -->
+              <div class="track-item" data-track-idx="2" data-title="The Spark" data-sub="Self-Titled" data-img="track3_thespark.png">
+                <div class="track-row">
+                  <div class="track-left">
+                    <div class="num-container">
+                      <span class="num">3</span>
+                      <span class="play-icon">▶</span>
+                    </div>
+                    <img src="track3_thespark.png" class="track-thumb" alt="The Spark Artwork" />
+                    <div class="title-meta">
+                      <span class="title">The Spark</span>
+                      <span class="click-hint">Click to expand story</span>
+                    </div>
+                  </div>
+                  <div class="track-right">
+                    <div class="equalizer-icon">
+                      <span></span><span></span><span></span>
+                    </div>
+                    <span class="genre-pill">Interests - EDM</span>
+                  </div>
+                </div>
+                <div class="track-expanded-content">
+                  <div class="expanded-layout">
+                    <img src="track3_thespark.png" class="expanded-art" alt="The Spark Artwork Large" />
+                    <div class="expanded-text">
+                      <h3 class="expanded-title">3. The Spark</h3>
+                      <div class="lyrics-label">Lyrics:</div>
+                      <p>
+                        When we’re not working, we’re usually out exploring Chicago, my partner is a foodie, so we’re always chasing new restaurants and street fest snacks. In summer, we bike all over the city and occasionally remember that the beach exists.<br><br>
+                        We love to travel, whether it’s a quick weekend with friends or a long trip with family. Sightseeing, hiking, and discovering small, unexpected places are our favorite ways to recharge.<br><br>
+                        Music is a big part of our lives, we go to way too many concerts, especially at smaller venues. We joke that we like catching artists either on their way up or on their way down.<br><br>
+                        I’m also a lifelong tinkerer. LEGO is my creative outlet (I even built a LEGO heart for our wedding ceremony), and my CAD background made learning LEGO Digital Designer feel like second nature. I play a little guitar, and I have a weakness for gadgets, Kickstarter has seen far too much of my wallet.<br><br>
+                        At the core of all these interests is curiosity. I love learning, experimenting, and finding joy in how things work, whether it’s a new piece of tech, a song, or a city street I haven’t biked down yet.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </section>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 1: GREATEST HITS -->
+      <div id="section-1" class="content-section" style="display: none;">
+        <!-- STAGE 1: Preview Card--> 
+        <div class="preview-card" style="background-image: url('resume_minifig.png');">
+          <div class="preview-overlay">
+            <span class="badge">ALBUM</span>
+            <h1 class="preview-title">Greatest Hits</h1>
+            <p class="preview-desc">
+              Work history, IT infrastructure engineering, systems operation, and technical skill track.
+            </p>
+          </div>
+        </div>
+         <!-- STAGE 2: Full Album View --> 
+           <div class="album-container" style="display: none;">
+          <div class="album-header">
+            <img src="resume_minifig.png" alt="Greatest Hits Cover" class="album-cover">
+            <div class="album-details">
+              <span class="badge">ALBUM</span>
+              <h1 class="album-title">Greatest Hits</h1>
+              <div class="album-meta">
+                <span class="artist-name">Pat Mansouri</span> • <span>2026</span> • <span>4 Tracks</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="album-body">
+            <section class="bio-section">
+              <h2>Album Notes</h2>
+              <p>
+                I’m a Senior Manager with more than fifteen years of experience leading large‑scale, multi‑release business transformation programs across global organizations. My work centers on Order to Cash (OTC), ERP modernization, and helping companies simplify, standardize, and scale their operations. I’ve led cross‑functional teams, guided stakeholders through complex process decisions, and delivered integrated SAP S/4HANA solutions across consumer products, high tech, industrial manufacturing, retail, and food & beverage.<br><br>
+                I do my best work alongside collaborative teams who are motivated to solve problems and keep projects moving. I’ve partnered with clients across the U.S. and Europe to simplify operations, reduce complexity, and align technology with business goals. Mentoring teams and bringing clarity to complex challenges are central to how I work.
+              </p>
+              <!-- Download Action -->
+              <div class="download-action">
+                <a href="Ahmed_Mansouri_Resume.pdf" target="_blank" rel="noopener noreferrer" class="resume-download-btn">
+                  <span class="icon">📄</span> Download Full PDF Resume
+                </a>
+              </div>
+            </section>
+
+            <section class="tracks-section">
+              <h2>Track List</h2>
+              
+              <div class="track-header-row">
+                <span class="th-num">#</span>
+                <span class="th-title">Title</span>
+                <span class="th-genre">Genre</span>
+              </div>
+
+              <!-- TRACK 1 -->
+             <div class="track-item" data-track-idx="0" data-title="Learning_Curve" data-sub="Greatest Hits" data-img="track1_learning_curve.png">
+                <div class="track-row">
+                  <div class="track-left">
+                    <div class="num-container">
+                      <span class="num">1</span>
+                      <span class="play-icon">▶</span>
+                    </div>
+                    <img src="track1_learning_curve.png" class="track-thumb" alt="Learning Curve Artwork" />
+                    <div class="title-meta">
+                      <span class="title">Learning Curve</span>
+                      <span class="click-hint">Click to expand story</span>
+                    </div>
+                  </div>
+                  <div class="track-right">
+                    <div class="equalizer-icon">
+                      <span></span><span></span><span></span>
+                    </div>
+                    <span class="genre-pill">Education - Pep Band</span>
+                  </div>
+                </div>
+                <div class="track-expanded-content">
+                  <div class="expanded-layout">
+                    <img src="track1_learning_curve.png" class="expanded-art" alt="Learning Curve Artwork Large" />
+                    <div class="expanded-text">
+                      <h3 class="expanded-title">1. Learning Curve</h3>
+                      <div class="lyrics-label">Lyrics:</div>
+                      <div class="song-lyrics">
+                        <div class="verse-block">
+                          <span class="verse-tag">[Verse 1 • 2010]</span>
+                          <h4 class="school-title">Purdue University <span class="location">— West Lafayette, IN</span></h4>
+                          <p class="degree-line">B.S., Mechanical Engineering Technology</p>
+                          <p class="degree-line minor">Minor in Computer Graphics Technology</p>
+                        </div>
+
+                        <div class="verse-block">
+                          <span class="verse-tag">[Verse 2 • 2007]</span>
+                          <h4 class="school-title">Ivy Tech Community College <span class="location">— Lafayette, IN</span></h4>
+                          <p class="degree-line">A.S., Computer Aided Design and Manufacturing</p>
+                        </div>
+
+                        <div class="verse-block outro">
+                          <span class="verse-tag">[Outro / Liner Notes]</span>
+                          <p class="summary-text">
+                            I started college unsure of the exact direction I wanted to pursue, which gave me the space to explore different paths while also earning in‑state residency and working full‑time at Wabash National. That experience on the shop floor shaped my work ethic and grounded me in practical problem‑solving. Once I transitioned into the associate program in computer‑aided design, everything accelerated, the combination of hands‑on manufacturing experience and technical training created a clear path forward, ultimately leading to my bachelor’s degree and the foundation for my career in technology.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TRACK 2 -->
+              <div class="track-item" data-track-idx="1" data-title="Utility Belt" data-sub="Greatest Hits" data-img="track2_utilitybelt.png">
+                <div class="track-row">
+                  <div class="track-left">
+                    <div class="num-container">
+                      <span class="num">2</span>
+                      <span class="play-icon">▶</span>
+                    </div>
+                    <img src="track2_utilitybelt.png" class="track-thumb" alt="Utility Belt Artwork" />
+                    <div class="title-meta">
+                      <span class="title">Utility Belt</span>
+                      <span class="click-hint">Click to expand story</span>
+                    </div>
+                  </div>
+                  <div class="track-right">
+                    <div class="equalizer-icon">
+                      <span></span><span></span><span></span>
+                    </div>
+                    <span class="genre-pill">Skills - Heroic Film Score</span>
+                  </div>
+                </div>
+                <div class="track-expanded-content">
+                  <div class="expanded-layout">
+                    <img src="track2_utilitybelt.png" class="expanded-art" alt="Utility Belt Artwork Large" />
+                    <div class="expanded-text">
+                      <h3 class="expanded-title">2. Utility Belt</h3>
+                      <div class="lyrics-label">Lyrics:</div>
+                      <div class="song-lyrics">
+                        <!-- VERSE 1 -->
+                        <div class="verse-block">
+                          <span class="verse-tag">[Verse 1 • Core Productivity & Modern AI]</span>
+                          <p class="degree-line"><strong>Primary Tools:</strong> Microsoft Excel, PowerPoint, Word</p>
+                          <p class="degree-line"><strong>AI Workflows:</strong> Claude Skills, Google Gemini, Microsoft Copilot</p>
+                        </div>
+
+                        <!-- VERSE 2 -->
+                        <div class="verse-block">
+                          <span class="verse-tag">[Verse 2 • Cloud Architecture & Enterprise Systems]</span>
+                          <p class="degree-line"><strong>Cloud Architecture:</strong> AWS Solutions, Azure Fundamentals</p>
+                          <p class="degree-line"><strong>Platforms & Processes:</strong> SAP S/4HANA Private and Public Cloud, Business Process Design, Order-to-Cash (OTC) Strategy, EDI Integration, Supply Chain Optimization</p>
+                        </div>
+
+                        <!-- VERSE 3 -->
+                        <div class="verse-block">
+                          <span class="verse-tag">[Verse 3 • Human Operating System & Leadership]</span>
+                          <p class="degree-line"><strong>Soft Skills:</strong> Collaborative Leadership that Drives Outcomes, Strategic Problem‑Solving Across Complex Processes, Clear, Confident Communication, Facilitation of High‑Stakes, Cross‑Functional Workshops</p>
+                          <p class="degree-line"><strong>Linguistic:</strong> Arabic Fluency (Bilingual Native Speaking, Reading, Writing)</p>
+                        </div>
+
+                        <!-- OUTRO -->
+                        <div class="verse-block outro">
+                          <span class="verse-tag">[Outro • Creative B-Sides]</span>
+                          <p class="summary-text">
+                            Guitar Playing & Composition • Ableton Live DAW & Audio Engineering • LEGO Digital Designer & Custom Building
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TRACK 3 -->
+              <div class="track-item" data-track-idx="2" data-title="Certified Fresh" data-sub="Greatest Hits" data-img="track3_certifiedfresh.png">
+                <div class="track-row">
+                  <div class="track-left">
+                    <div class="num-container">
+                      <span class="num">3</span>
+                      <span class="play-icon">▶</span>
+                    </div>
+                    <img src="track3_certifiedfresh.png" class="track-thumb" alt="Certified Fresh Artwork" />
+                    <div class="title-meta">
+                      <span class="title">Certified Fresh</span>
+                      <span class="click-hint">Click to expand story</span>
+                    </div>
+                  </div>
+                  <div class="track-right">
+                    <div class="equalizer-icon">
+                      <span></span><span></span><span></span>
+                    </div>
+                    <span class="genre-pill">Certifications - Bright Pop</span>
+                  </div>
+                </div>
+                <div class="track-expanded-content">
+                  <div class="expanded-layout">
+                    <img src="track3_certifiedfresh.png" class="expanded-art" alt="Certified Fresh Artwork Large" />
+                    <div class="expanded-text">
+                      <h3 class="expanded-title">3. Certified Fresh</h3>
+                      <div class="lyrics-label">Lyrics:</div>
+                      <div class="song-lyrics">
+                        <!-- VERSE 1 -->
+                        <div class="verse-block">
+                          <span class="verse-tag">[Verse 1 • 2026 Amazon Web Services]</span>
+                          <h4 class="school-title">AWS Certified AI Practitioner</h4>
+                          <p class="degree-line">Amazon Web Services</p>
+                        </div>
+
+                        <!-- VERSE 2 -->
+                        <div class="verse-block">
+                          <span class="verse-tag">[Verse 2 • 2026 S/4HANA]</span>
+                          <h4 class="school-title">SAP Certified Associate</h4>
+                          <p class="degree-line">Implementation Consultant - SAP S/4HANA Cloud Public Edition</p>
+                        </div>
+
+                        <!-- VERSE 3 -->
+                        <div class="verse-block">
+                          <span class="verse-tag">[Verse 3 • 2021 Amazon Web Services]</span>
+                          <h4 class="school-title">AWS Solution Architect Associate</h4>
+                          <p class="degree-line">Amazon Web Services</p>
+                        </div>
+
+                        <!-- VERSE 4 -->
+                        <div class="verse-block">
+                          <span class="verse-tag">[Verse 4 • 2020 Amazon Web Services]</span>
+                          <h4 class="school-title">AWS Certified Cloud Practitioner</h4>
+                          <p class="degree-line">Amazon Web Services</p>
+                        </div>
+
+                        <!-- VERSE 5 -->
+                        <div class="verse-block">
+                          <span class="verse-tag">[Verse 5 • 2019 Microsoft]</span>
+                          <h4 class="school-title">Microsoft Certified Azure Fundamentals</h4>
+                          <p class="degree-line">Microsoft</p>
+                        </div>
+
+                        <!-- OUTRO -->
+                        <div class="verse-block outro">
+                          <span class="verse-tag">[Outro / Liner Notes]</span>
+                          <p class="summary-text">
+                            My certifications reflect something simple about me: I genuinely love learning. I’ve always been drawn to new tools, new systems, and new ways of solving problems, and that curiosity naturally led me into cloud platforms and modern ERP technologies. Whether it’s exploring AWS architecture, understanding how SAP S/4HANA fits into a global business, or diving into a new technical skill just because it interests me, continuous learning has always been part of how I grow. These certifications aren’t just milestones, they’re snapshots of the things I’ve been excited to understand and apply.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TRACK 4 -->
+              <div class="track-item" data-track-idx="3" data-title="Level Up" data-sub="Greatest Hits" data-img="track4_levelup.png">
+                <div class="track-row">
+                  <div class="track-left">
+                    <div class="num-container">
+                      <span class="num">4</span>
+                      <span class="play-icon">▶</span>
+                    </div>
+                    <img src="track4_levelup.png" class="track-thumb" alt="Level Up Artwork" />
+                    <div class="title-meta">
+                      <span class="title">Level Up</span>
+                      <span class="click-hint">Click to expand story</span>
+                    </div>
+                  </div>
+                  <div class="track-right">
+                    <div class="equalizer-icon">
+                      <span></span><span></span><span></span>
+                    </div>
+                    <span class="genre-pill">Work History - 8-bit</span>
+                  </div>
+                </div>
+                <div class="track-expanded-content">
+                  <div class="expanded-layout">
+                    <img src="track4_levelup.png" class="expanded-art" alt="Level Up Artwork Large" />
+                    <div class="expanded-text">
+                      <h3 class="expanded-title">4. Level Up</h3>
+                      <div class="lyrics-label">Lyrics:</div>
+                      <div class="song-lyrics">
+                        <!-- VERSE 1 -->
+                        <div class="verse-block">
+                          <span class="verse-tag">[Verse 1 • 2011 – Present]</span>
+                          <h4 class="school-title">Accenture <span class="location">— Chicago, IL</span></h4>
+                          <p class="degree-line"><strong>Senior Manager — IT Strategy & SAP S/4HANA Transformation</strong></p>
+                          <p class="degree-line">Leading multi-release, large-scale global business transformation projects across Consumer and Industrial Products industries. Specializing in Order to Cash (OTC) end-to-end process design, supply chain optimization, e-Commerce/EDI integration, and cross-functional team leadership.</p>
+                        </div>
+
+                        <!-- VERSE 2 -->
+                        <div class="verse-block">
+                          <span class="verse-tag">[Verse 2 • 2004 – 2009]</span>
+                          <h4 class="school-title">Wabash National <span class="location">— Lafayette, IN</span></h4>
+                          <p class="degree-line"><strong>Design & Computer Aided Drafting Specialist</strong></p>
+                          <p class="degree-line">Gained foundational hands-on industry experience while working through college, developing expertise in manufacturing workflows, CAD modeling, and engineering systems.</p>
+                        </div>
+
+                        <!-- OUTRO -->
+                        <div class="verse-block outro">
+                          <span class="verse-tag">[Outro / Liner Notes]</span>
+                          <p class="summary-text">
+                            14+ years of driving global IT transformation, aligning complex technology platforms with overarching business goals, and mentoring high-performing teams to deliver tangible enterprise value.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </section>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 2: B-SIDES & REMIXES -->
+      <div id="section-2" class="content-section" style="display: none;">
+        <!-- STAGE 1: Preview Card -->
+        <div class="preview-card" style="background-image: url('projects_minifig.png');">
+          <div class="preview-overlay">
+            <span class="badge">ALBUM</span>
+            <h1 class="preview-title">B-Sides & Remixes</h1>
+            <p class="preview-desc">
+              JavaScript games, web restorations, photo tools, and custom builds.
+            </p>
+          </div>
+        </div>
+
+        <!-- STAGE 2: Full Album View -->
+        <div class="album-container" style="display: none;">
+          <div class="album-header">
+            <img src="projects_minifig.png" alt="B-Sides & Remixes Cover" class="album-cover">
+            <div class="album-details">
+              <span class="badge">ALBUM</span>
+              <h1 class="album-title">B-Sides & Remixes</h1>
+              <div class="album-meta">
+                <span class="artist-name">Pat Mansouri</span> • <span>2026</span> • <span>3 Tracks</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="album-body">
+            <section class="bio-section">
+              <h2>Album Notes</h2>
+              <p>
+                Equal parts lab notebook, creative outlet, and digital scratchpad. From bringing old personal sites back to life to writing mini-games and setting up home servers, this collection is driven by sheer curiosity: testing what I can do, finding out what I can't, and seeing how much I can break over a weekend.
+              </p>
+            </section>
+
+            <section class="tracks-section">
+              <h2>Track List</h2>
+              
+              <div class="track-header-row">
+                <span class="th-num">#</span>
+                <span class="th-title">Title</span>
+                <span class="th-genre">Genre</span>
+              </div>
+
+              <!-- TRACK 1: WEB & RETRO APPS -->
+              <div class="track-item" data-track-idx="0" data-title="URL (My Everything)" data-sub="B-Sides & Remixes" data-img="projects_minifig.png">
+                <div class="track-row">
+                  <div class="track-left">
+                    <div class="num-container">
+                      <span class="num">1</span>
+                      <span class="play-icon">▶</span>
+                    </div>
+                    <img src="urlmyeverything.png" class="track-thumb" alt="Sites Artwork" />
+                    <div class="title-meta">
+                      <span class="title">URL (My Everything)</span>
+                      <span class="click-hint">Click to expand projects</span>
+                    </div>
+                  </div>
+                  <div class="track-right">
+                    <div class="equalizer-icon">
+                      <span></span><span></span><span></span>
+                    </div>
+                    <span class="genre-pill">Web Dev - Synthwave</span>
+                  </div>
+                </div>
+                <div class="track-expanded-content">
+                  <div class="expanded-layout">
+                    <img src="urlmyeverything.png" alt="URL (My Everything) Cover" class="expanded-art" />
+                    <div class="expanded-text">
+                      <h3 class="expanded-title">1. URL (My Everything)</h3>
+                      <div class="lyrics-label">Featured Projects:</div>
+                      
+                      <!-- Project Card 1 -->
+                        <div class="project-card">
+                          <h4>PHP 4 Site Restoration <span class="tag-badge">Restoration</span></h4>
+                          <p>
+                            This is a modern restoration of my original DJ website from the early 2000s, rebuilt from its PHP 4 & Flash roots into PHP 8 & a Flash Emulator and then reimagined in HTML/CSS/JS for my portfolio. The design stays true to the original, but I couldn’t resist adding a few mischievous easter eggs. Take your time exploring - you might trigger something amusing.
+                          </p>
+                          
+                          <div class="tech-tags">
+                            <span class="tech-pill">PHP</span>
+                            <span class="tech-pill">HTML</span>
+                            <span class="tech-pill">CSS</span>
+                            <span class="tech-pill">JS</span>
+                            <span class="tech-pill">Photoshop</span>
+                          </div>
+
+                          <!-- <a href="DanceFloorFreak/index.html" target="_blank" rel="noopener noreferrer" class="launch-btn">
+                            Launch Site ↗
+                          </a> -->
+                          <a href="DanceFloorFreak/index.html" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            class="launch-btn"
+                            onclick="event.stopPropagation();">
+                            Launch Live Site ↗
+                          </a>
+                        </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TRACK 2: GAMES -->
+              <div class="track-item" data-track-idx="1" data-title="Side Quest" data-sub="B-Sides & Remixes" data-img="projects_minifig.png">
+                <div class="track-row">
+                  <div class="track-left">
+                    <div class="num-container">
+                      <span class="num">2</span>
+                      <span class="play-icon">▶</span>
+                    </div>
+                    <img src="sidequest.png" class="track-thumb" alt="Games Artwork" />
+                    <div class="title-meta">
+                      <span class="title">Side Quest</span>
+                      <span class="click-hint">Click to expand projects</span>
+                    </div>
+                  </div>
+                  <div class="track-right">
+                    <div class="equalizer-icon">
+                      <span></span><span></span><span></span>
+                    </div>
+                    <span class="genre-pill">Interactive Games - Chiptune</span>
+                  </div>
+                </div>
+                
+                <div class="track-expanded-content">
+                  <div class="expanded-layout">
+                    <!-- Left Side Large Cover Art -->
+                    <img src="sidequest.png" alt="Side Quest Artwork Large" class="expanded-art" />
+                    
+                    <!-- Right Side Details & Games Grid -->
+                    <div class="expanded-text">
+                      <h3 class="expanded-title">2. Side Quest</h3>
+                      <div class="lyrics-label">Featured Projects:</div>
+                      
+                      <div class="games-grid">
+                        <!-- Game Card 1: Black Knight Puzzle -->
+                        <div class="project-card" id="gameCard-blackknight">
+                          <div class="game-card-info">
+                            <h4>Black Knight Chess Puzzle <span class="tag-badge">JavaScript</span></h4>
+                            <p>
+                              Lightweight, interactive browser puzzle exploring move mechanics, BFS pathfinding solver, and local leaderboards.
+                            </p>
+                            <div class="tech-tags">
+                              <span class="tech-pill">JavaScript</span>
+                              <span class="tech-pill">HTML5</span>
+                              <span class="tech-pill">CSS3</span>
+                            </div>
+                            
+                            <button class="launch-btn" onclick="event.stopPropagation(); launchGame('blackknight', 'games/TheBlackKnight/BlackKnightPuzzle.html')">
+                              ▶ Play Game
+                            </button>
+                          </div>
+
+                          <!-- Hidden Iframe Container (Swaps in when clicked) -->
+                          <div class="iframe-container hidden" id="iframeContainer-blackknight">
+                            <div class="iframe-header">
+                              <span>Black Knight Puzzle</span>
+                              <button class="close-game-btn" onclick="event.stopPropagation(); closeGame('blackknight')">✕ Close Game</button>
+                            </div>
+                            <iframe src="" data-src="Games/TheBlackKnight/BlackKnightPuzzle.html" class="game-iframe" title="Black Knight Puzzle"></iframe>
+                          </div>
+                        </div>
+
+                        <!-- Future Game Cards Can Be Added Here -->
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TRACK 3: PHOTO & MEDIA TOOLS -->
+              <div class="track-item" data-track-idx="2" data-title="No Filter" data-sub="B-Sides & Remixes" data-img="projects_minifig.png">
+                <div class="track-row">
+                  <div class="track-left">
+                    <div class="num-container">
+                      <span class="num">3</span>
+                      <span class="play-icon">▶</span>
+                    </div>
+                    <img src="nofilter.PNG" class="track-thumb" alt="Tools Artwork" />
+                    <div class="title-meta">
+                      <span class="title">No Filter</span>
+                      <span class="click-hint">Click to expand projects</span>
+                    </div>
+                  </div>
+                  <div class="track-right">
+                    <div class="equalizer-icon">
+                      <span></span><span></span><span></span>
+                    </div>
+                    <span class="genre-pill">Utilities - Ambient</span>
+                  </div>
+                </div>
+                <div class="track-expanded-content">
+                  <div class="expanded-layout">
+                     <img src="nofilter.png" alt="URL (My Everything) Cover" class="expanded-art" />
+                    <div class="expanded-text">
+                      <h3 class="expanded-title">3. No Filter</h3>
+                      <div class="lyrics-label">In Concept & Development:</div>
+                      
+                      <!-- Project Card 1 -->
+                      <div class="project-card">
+                        <h4>Picture App Concept <span class="tag-badge">In Development</span></h4>
+                        <p>A web-based image manipulation and organization tool designed for fast media handling and clean previews.</p>
+                        <div class="tech-tags">
+                          <span class="tech-pill">UI/UX</span>
+                          <span class="tech-pill">JS Media APIs</span>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TRACK 4: Journal -->
+              <div class="track-item" data-track-idx="3" data-title="First Draft" data-sub="B-Sides & Remixes" data-img="projects_minifig.png">
+                <div class="track-row">
+                  <div class="track-left">
+                    <div class="num-container">
+                      <span class="num">4</span>
+                      <span class="play-icon">▶</span>
+                    </div>
+                    <img src="firstdraft.png" class="track-thumb" alt="Tools Artwork" />
+                    <div class="title-meta">
+                      <span class="title">First Draft</span>
+                      <span class="click-hint">Click to expand projects</span>
+                    </div>
+                  </div>
+                  <div class="track-right">
+                    <div class="equalizer-icon">
+                      <span></span><span></span><span></span>
+                    </div>
+                    <span class="genre-pill">Journal - Classical</span>
+                  </div>
+                </div>
+                <div class="track-expanded-content">
+                  <div class="expanded-layout">
+                     <img src="firstdraft.png" alt="URL (My Everything) Cover" class="expanded-art" />
+                    <div class="expanded-text">
+                      <h3 class="expanded-title">4. First Draft</h3>
+                      <div class="lyrics-label">In Concept & Development:</div>
+                      
+                      <!-- Project Card 1 -->
+                      <div class="project-card">
+                        <h4>Picture App Concept <span class="tag-badge">In Development</span></h4>
+                        <p>A web-based image manipulation and organization tool designed for fast media handling and clean previews.</p>
+                        <div class="tech-tags">
+                          <span class="tech-pill">UI/UX</span>
+                          <span class="tech-pill">JS Media APIs</span>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+
+       
+
+    </main>
+  </div>
+
+  <!-- Bottom Media Player Controls -->
+  <footer class="player-bar">
+    <div class="now-playing">
+      <img id="trackThumb" src="about_me_minifig.png" alt="Track Thumbnail" />
+      <div class="track-info">
+        <div id="trackTitle" class="title">Self-Titled</div>
+        <div id="trackArtist" class="artist">About Me</div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="buttons">
+        <button class="btn" id="prevBtn" aria-label="Previous Track">⏮</button>
+        <button class="btn btn-play" id="playBtn" aria-label="Play or Open Section">▶</button>
+        <button class="btn" id="nextBtn" aria-label="Next Track">⏭</button>
+      </div>
+    </div>
+    
+    <div class="player-spacer"></div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
