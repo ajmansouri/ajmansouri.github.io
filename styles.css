@@ -35,7 +35,6 @@ body {
   color: var(--text-main);
 }
 
-/* App Layout */
 .app-container {
   display: flex;
   flex: 1;
@@ -44,7 +43,6 @@ body {
   overflow: hidden;
 }
 
-/* Sidebar */
 .sidebar {
   width: 280px;
   flex-shrink: 0;
@@ -108,7 +106,6 @@ body {
   color: #b3b3b3;
 }
 
-/* Main Display */
 .main-view {
   flex: 1;
   min-width: 0;
@@ -127,7 +124,6 @@ body {
   width: 100%;
 }
 
-/* Stage 1: Preview Card */
 .preview-card {
   max-width: 100%;
   height: 520px;
@@ -176,7 +172,6 @@ body {
   font-size: 1.1rem;
 }
 
-/* Stage 2: Album Full View */
 .album-container {
   width: 100%;
 }
@@ -231,7 +226,6 @@ body {
   max-width: 900px;
 }
 
-/* Track List Section */
 .tracks-section {
   display: flex;
   flex-direction: column;
@@ -255,16 +249,11 @@ body {
   padding-left: 48px;
 }
 
-.track-header-row .th-title {
-  flex: 1;
-}
-
 .track-header-row .th-genre {
   text-align: right;
   padding-right: 24px;
 }
 
-/* Track Items */
 .track-item {
   border-radius: 6px;
   transition: background 0.2s ease;
@@ -278,7 +267,6 @@ body {
 
 .track-item.expanded .expanded-layout {
   opacity: 1;
-  padding-top: 8px;
 }
 
 .track-row {
@@ -293,6 +281,7 @@ body {
   align-items: center;
   gap: 16px;
 }
+
 .num-container {
   width: 20px;
   display: flex;
@@ -308,7 +297,6 @@ body {
   font-size: 0.85rem;
 }
 
-/* Row Hover: Swap track number for Play icon */
 .track-item:hover .num {
   display: none;
 }
@@ -332,7 +320,6 @@ body {
   color: var(--accent);
 }
 
-/* Track Expanded State styling */
 .track-item.expanded .title {
   color: var(--accent);
 }
@@ -346,7 +333,6 @@ body {
   color: var(--accent);
 }
 
-/* Animated Equalizer Soundbars for Expanded Track */
 .track-right {
   display: flex;
   align-items: center;
@@ -408,7 +394,6 @@ body {
   letter-spacing: 0.3px;
 }
 
-/* Smooth Grid Accordion Expansion */
 .track-expanded-content {
   display: grid;
   grid-template-rows: 0fr;
@@ -417,21 +402,19 @@ body {
   border-bottom: 1px solid transparent;
 }
 
-/* Expanded State */
 .track-item.expanded .track-expanded-content {
   grid-template-rows: 1fr;
   padding: 16px 12px 24px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Inner wrapper handles overflow for CSS grid transitions */
 .expanded-layout {
   overflow: hidden;
   display: flex;
   gap: 24px;
   align-items: flex-start;
   opacity: 0;
-  transition: opacity 0.25s ease, padding 0.35s ease;
+  transition: opacity 0.25s ease;
   padding: 0;
 }
 
@@ -467,7 +450,6 @@ body {
   max-width: 850px;
 }
 
-/* Project Cards in Expanded Tracks */
 .project-card {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -521,7 +503,6 @@ body {
   border-radius: 12px;
 }
 
-/* Launch Buttons */
 .launch-btn {
   display: inline-flex;
   align-items: center;
@@ -547,7 +528,6 @@ body {
   box-shadow: 0 4px 12px rgba(29, 185, 84, 0.25);
 }
 
-/* Song Lyrics Layout for Resume Tracks */
 .song-lyrics {
   display: flex;
   flex-direction: column;
@@ -605,7 +585,6 @@ body {
   font-style: italic;
 }
 
-/* Download Button */
 .download-action {
   margin-top: 20px;
 }
@@ -636,7 +615,6 @@ body {
   font-size: 1.0rem;
 }
 
-/* Bottom Player Bar */
 .player-bar {
   height: 80px;
   background: var(--bg-black);
@@ -724,7 +702,6 @@ body {
   width: 30%;
 }
 
-/* MODAL OVERLAY STYLES */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -810,7 +787,6 @@ body {
   display: block;
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
   body {
     overflow: auto;

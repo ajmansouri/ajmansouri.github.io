@@ -1,4 +1,3 @@
-// Modal Overlay Controller Functions
 function openGameModal(title, gameUrl) {
   const modal = document.getElementById('gameModal');
   const modalTitle = document.getElementById('modalTitle');
@@ -14,7 +13,7 @@ function closeGameModal() {
   const modalIframe = document.getElementById('modalIframe');
 
   if (modal) modal.classList.remove('active');
-  if (modalIframe) modalIframe.src = 'about:blank'; // Clears iframe to stop game audio/loops
+  if (modalIframe) modalIframe.src = 'about:blank';
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -33,12 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const modal = document.getElementById('gameModal');
 
-  let selectedIndex = 0;   // Active album section
-  let hoverIndex = null;     // Hovered album section
-  let isFullView = false;    // Full album view flag
-  let activeTrackIdx = null; // Expanded track index (null = all collapsed)
+  let selectedIndex = 0;
+  let hoverIndex = null;
+  let isFullView = false;
+  let activeTrackIdx = null;
 
-  // Modal event handlers
   if (modal) {
     modal.addEventListener('click', (e) => {
       if (e.target === modal) {
@@ -58,20 +56,13 @@ document.addEventListener('DOMContentLoaded', () => {
       isFullView = false;
       activeTrackIdx = null;
 
-      // Reset sidebar selection back to index 0
       selectedIndex = 0;
       menuItems.forEach((item, idx) => {
-        if (idx === selectedIndex) {
-          item.classList.add('active');
-        } else {
-          item.classList.remove('active');
-        }
+        item.classList.toggle('active', idx === selectedIndex);
       });
 
-      // Return to stage 1 preview card state
       previewSection(selectedIndex);
 
-      // Reset player button icon to Play '▶'
       if (playBtn) playBtn.textContent = '▶';
     });
   }
@@ -93,7 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (trackArtist) trackArtist.textContent = sub;
   }
 
-  // Stage 1: Preview Card View
   function previewSection(index) {
     const idx = parseInt(index, 10);
     const data = getItemData(idx);
@@ -126,18 +116,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (playBtn) playBtn.textContent = '▶';
   }
 
-  // Stage 2: Full Album View
   function navigateToAlbum(index) {
     selectedIndex = parseInt(index, 10);
     isFullView = true;
-    activeTrackIdx = null; // All tracks start collapsed
+    activeTrackIdx = null;
 
     menuItems.forEach((item, idx) => {
-      if (idx === selectedIndex) {
-        item.classList.add('active');
-      } else {
-        item.classList.remove('active');
-      }
+      item.classList.toggle('active', idx === selectedIndex);
     });
 
     contentSections.forEach((section, sIdx) => {
@@ -165,7 +150,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (playBtn) playBtn.textContent = '▶';
   }
 
-  // Expand track row & activate player state
   function expandTrack(sectionIdx, trackIdx) {
     const activeSection = document.getElementById(`section-${sectionIdx}`);
     if (!activeSection) return;
@@ -190,7 +174,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (playBtn) playBtn.textContent = '❚❚';
   }
 
-  // Toggle single track collapse/expand
   function toggleTrack(item, sectionIdx, trackIdx) {
     const isAlreadyExpanded = item.classList.contains('expanded');
 
@@ -206,7 +189,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Sidebar Menu Events
   menuItems.forEach((item) => {
     item.addEventListener('mouseenter', () => {
       if (isFullView) return;
@@ -225,8 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       hoverIndex = null;
       menuItems.forEach((i, idx) => {
-        if (idx === selectedIndex) i.classList.add('active');
-        else i.classList.remove('active');
+        i.classList.toggle('active', idx === selectedIndex);
       });
 
       previewSection(selectedIndex);
@@ -238,7 +219,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Track Click Handlers
   contentSections.forEach((section, sIdx) => {
     const trackItems = section.querySelectorAll('.track-item');
     trackItems.forEach((item, tIdx) => {
@@ -256,7 +236,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Global Player Bar Button
   if (playBtn) {
     playBtn.addEventListener('click', () => {
       if (!isFullView) {
@@ -264,7 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         if (activeTrackIdx !== null) {
           const activeSection = document.getElementById(`section-${selectedIndex}`);
-          const trackItems = activeSection.querySelectorAll('.track-item');
+          const trackItems = activeSection ? activeSection.querySelectorAll('.track-item') : [];
           if (trackItems[activeTrackIdx]) {
             toggleTrack(trackItems[activeTrackIdx], selectedIndex, activeTrackIdx);
           }
@@ -275,7 +254,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Previous Track Control
   if (prevBtn) {
     prevBtn.addEventListener('click', () => {
       if (isFullView) {
@@ -295,7 +273,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Next Track Control
   if (nextBtn) {
     nextBtn.addEventListener('click', () => {
       if (isFullView) {
@@ -315,6 +292,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Initial Load
   previewSection(0);
 });
