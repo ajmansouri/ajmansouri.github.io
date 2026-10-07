@@ -53,17 +53,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (homeBtn) {
     homeBtn.addEventListener('click', () => {
-      isFullView = false;
-      activeTrackIdx = null;
+      // Only perform the home reset on desktop screens
+      if (window.innerWidth > 768) {
+        isFullView = false;
+        activeTrackIdx = null;
 
-      selectedIndex = 0;
-      menuItems.forEach((item, idx) => {
-        item.classList.toggle('active', idx === selectedIndex);
-      });
+        selectedIndex = 0;
+        menuItems.forEach((item, idx) => {
+          item.classList.toggle('active', idx === selectedIndex);
+        });
 
-      previewSection(selectedIndex);
+        previewSection(selectedIndex);
 
-      if (playBtn) playBtn.textContent = '▶';
+        if (playBtn) playBtn.textContent = '▶';
+      }
     });
   }
 
@@ -293,4 +296,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   previewSection(0);
+    // Auto-select first album on load ONLY for mobile/small screens
+  if (window.innerWidth <= 768 && menuItems.length > 0) {
+    menuItems[0].click();
+  }
 });

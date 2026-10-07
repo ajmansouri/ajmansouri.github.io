@@ -787,10 +787,72 @@ body {
   display: block;
 }
 
+/* =========================================================
+   MOBILE & TABLET STYLES (768px and below)
+   ========================================================= */
 @media (max-width: 768px) {
   body {
     overflow: auto;
   }
+
+  /* Stack sidebar on top of main content */
+  .app-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .sidebar {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Horizontal row with dark pills */
+  .menu {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .menu::-webkit-scrollbar {
+    display: none;
+  }
+
+  .menu-item {
+    flex: 1 1 0%;
+    min-width: max-content;
+    background-color: #242424;
+    padding: 8px 12px;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .menu-item.active {
+    background-color: #333333;
+  }
+
+  .item-title,
+  .sub {
+    white-space: nowrap;
+  }
+
+  /* Hide hero image on mobile so album notes sit directly below */
+  .preview-card {
+    display: none !important;
+  }
+
+  .content-section,
+  .main-content {
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+
+
 
   .app-container {
     flex-direction: column;
