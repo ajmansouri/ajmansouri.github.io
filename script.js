@@ -53,7 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (homeBtn) {
     homeBtn.addEventListener('click', () => {
-      // Only perform the home reset on desktop screens
       if (window.innerWidth > 768) {
         isFullView = false;
         activeTrackIdx = null;
@@ -296,7 +295,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   previewSection(0);
-    // Auto-select first album on load ONLY for mobile/small screens
+   
   if (window.innerWidth <= 768 && menuItems.length > 0) {
     menuItems[0].click();
   }

@@ -787,26 +787,21 @@ body {
   display: block;
 }
 
-/* =========================================================
-   MOBILE & TABLET STYLES (768px and below)
-   ========================================================= */
 @media (max-width: 768px) {
   body {
     overflow: auto;
   }
 
-  /* Stack sidebar on top of main content */
   .app-container {
     flex-direction: column;
     width: 100%;
   }
 
   .sidebar {
-    width: 100% !important;
-    max-width: 100% !important;
+    width: 100%;
+    max-width: 100%;
   }
 
-  /* Horizontal row with dark pills */
   .menu {
     display: flex;
     flex-direction: row;
@@ -840,19 +835,15 @@ body {
     white-space: nowrap;
   }
 
-  /* Hide hero image on mobile so album notes sit directly below */
   .preview-card {
-    display: none !important;
+    display: none;
   }
 
   .content-section,
   .main-content {
-    height: auto !important;
-    min-height: auto !important;
+    height: auto;
+    min-height: auto;
   }
-
-
-
 
   .app-container {
     flex-direction: column;
