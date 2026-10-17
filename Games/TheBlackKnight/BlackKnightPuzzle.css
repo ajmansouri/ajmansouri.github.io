@@ -191,7 +191,7 @@ h1:hover {
 }
 
 .square.target {
-    background-color: #000;
+    background-color: rgba(29, 185, 84, 0.3)!important;
     border: 2px solid gold;
 }
 

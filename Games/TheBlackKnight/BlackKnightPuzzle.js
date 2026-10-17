@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
         startTimer();
         gameActive = true;
         isSolving = false;
-        messageDisplay.textContent = "Move the pieces to guide the Black Knight to the black square!";
+        messageDisplay.textContent = "Move the pieces to guide the Black Knight to the green square!";
     }
 
     function resetGame() {
