@@ -383,6 +383,23 @@ body {
   font-size: 0.95rem;
   color: var(--text-main);
 }
+.mute-toggle {
+  background: none;
+  border: none;
+  color: #b3b3b3; /* matches Spotify secondary text */
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease, transform 0.1s ease;
+}
+
+.mute-toggle:hover {
+  color: #ffffff; /* brightens on hover */
+  transform: scale(1.05);
+}
 
 .genre-pill {
   background: var(--pill-bg);
@@ -883,5 +900,37 @@ body {
   .modal-container {
     height: 90vh;
     width: 100%;
+  }
+  .player-bar {
+    padding: 8px 12px;
+    gap: 8px;
+  }
+  .now-playing {
+    min-width: 0; 
+    flex: 1 1 auto;
+    overflow: hidden;
+  }
+  .now-playing .track-info {
+    min-width: 0;
+    overflow: hidden;
+  }
+  .now-playing .title,
+  .now-playing .artist {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .player-spacer {
+    display: none;
+  }
+  .controls {
+    flex-shrink: 0;
+  }
+  .buttons {
+    gap: 4px; 
+  }
+  .btn, .mute-toggle {
+    padding: 4px 6px;
+    font-size: 0.95rem;
   }
 }

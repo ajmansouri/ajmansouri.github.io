@@ -27,7 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const prevBtn = document.getElementById('prevBtn');
   const nextBtn = document.getElementById('nextBtn');
   const playBtn = document.getElementById('playBtn');
-
+  const muteBtn = document.getElementById('mute-btn');
+  const muteIcon = muteBtn ? muteBtn.querySelector('.mute-icon') : null;
   const homeBtn = document.getElementById('homeBtn');
 
   const modal = document.getElementById('gameModal');
@@ -36,7 +37,29 @@ document.addEventListener('DOMContentLoaded', () => {
   let hoverIndex = null;
   let isFullView = false;
   let activeTrackIdx = null;
+  let isGlobalMuted = true;
 
+  if (muteBtn && muteIcon) {
+    muteBtn.addEventListener('click', () => {
+      isGlobalMuted = !isGlobalMuted;
+      
+      // Toggle icon and tooltip title
+      if (isGlobalMuted) {
+        muteIcon.textContent = '🔇';
+        muteBtn.title = 'Unmute Audio';
+      } else {
+        muteIcon.textContent = '🔊';
+        muteBtn.title = 'Mute Audio';
+      }
+
+      // Optional: If you have an active audio element playing, sync its muted property
+      // if (window.activeAudio) {
+      //   window.activeAudio.muted = isGlobalMuted;
+      // }
+
+      console.log('Audio Muted:', isGlobalMuted);
+    });
+  }
   if (modal) {
     modal.addEventListener('click', (e) => {
       if (e.target === modal) {
