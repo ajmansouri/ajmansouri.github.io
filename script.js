@@ -39,27 +39,65 @@ document.addEventListener('DOMContentLoaded', () => {
   let activeTrackIdx = null;
   let isGlobalMuted = true;
 
+  // --- AUDIO SYSTEM SETUP ---
+  const backgroundAudio = document.createElement('audio');
+  backgroundAudio.loop = true;
+  backgroundAudio.muted = true; // Default muted per specs
+  document.body.appendChild(backgroundAudio);
+
+  let currentPlayingTrackKey = null;
+
+  // Helper to normalize title to filename (e.g. "Genesis" -> "genesis.mp3", "Where Love Lives" -> "wherelovelives.mp3")
+  function getAudioFileName(title) {
+    if (!title) return '';
+    return title.toLowerCase().replace(/[^a-z0-9]/g, '') + '.mp3';
+  }
+
+  // Function to load and manage audio playback
+  function playTrackAudio(trackTitle) {
+    if (!trackTitle) return;
+
+    const fileName = getAudioFileName(trackTitle);
+    const audioPath = `audio/${fileName}`; // Assumes MP3s are stored in an 'audio' folder
+
+    if (currentPlayingTrackKey !== fileName) {
+      currentPlayingTrackKey = fileName;
+      backgroundAudio.src = audioPath;
+      backgroundAudio.load();
+    }
+
+    if (!isGlobalMuted) {
+      backgroundAudio.play().catch(err => console.log("Autoplay blocked:", err));
+    }
+  }
+
+  function pauseTrackAudio() {
+    backgroundAudio.pause();
+  }
+
+  // --- MUTE / UNMUTE BUTTON LOGIC ---
   if (muteBtn && muteIcon) {
     muteBtn.addEventListener('click', () => {
       isGlobalMuted = !isGlobalMuted;
+      backgroundAudio.muted = isGlobalMuted;
       
       // Toggle icon and tooltip title
       if (isGlobalMuted) {
         muteIcon.textContent = '🔇';
         muteBtn.title = 'Unmute Audio';
+        pauseTrackAudio();
       } else {
         muteIcon.textContent = '🔊';
         muteBtn.title = 'Mute Audio';
+        if (backgroundAudio.src) {
+          backgroundAudio.play().catch(err => console.log("Playback prevented:", err));
+        }
       }
-
-      // Optional: If you have an active audio element playing, sync its muted property
-      // if (window.activeAudio) {
-      //   window.activeAudio.muted = isGlobalMuted;
-      // }
 
       console.log('Audio Muted:', isGlobalMuted);
     });
   }
+
   if (modal) {
     modal.addEventListener('click', (e) => {
       if (e.target === modal) {
@@ -191,6 +229,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const sub = item.getAttribute('data-sub');
         const img = item.getAttribute('data-img');
         updatePlayerBar(title, sub, img);
+
+        // Trigger Suno track audio loading & playback
+        playTrackAudio(title);
       } else {
         item.classList.remove('expanded');
       }
@@ -206,6 +247,9 @@ document.addEventListener('DOMContentLoaded', () => {
       item.classList.remove('expanded');
       activeTrackIdx = null;
       
+      // Pause audio when collapsing the active track
+      pauseTrackAudio();
+
       const data = getItemData(sectionIdx);
       if (data) updatePlayerBar(data.title, data.sub, data.img);
       if (playBtn) playBtn.textContent = '▶';

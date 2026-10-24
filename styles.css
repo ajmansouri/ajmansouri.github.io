@@ -234,19 +234,25 @@ body {
 
 .track-header-row {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 8px 12px;
-  color: var(--text-sub);
-  font-size: 0.85rem;
-  font-weight: 600;
+  padding: 0 16px 8px 16px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  margin-bottom: 8px;
+  margin-bottom: 12px;
+  color: #b3b3b3;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .track-header-row .th-num {
-  width: 70px;
-  padding-left: 48px;
+  width: 40px;
+  text-align: center;
+}
+
+.track-header-row .th-title {
+  flex: 1;
+  text-align: left;
+  padding-left: 56px; /* Offsets "Title" to align over track names */
 }
 
 .track-header-row .th-genre {
