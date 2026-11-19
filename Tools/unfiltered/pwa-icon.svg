@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#202b52"/>
+      <stop offset="1" stop-color="#10131a"/>
+    </linearGradient>
+    <linearGradient id="photo-one" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f2bc8b"/>
+      <stop offset="1" stop-color="#bd6474"/>
+    </linearGradient>
+    <linearGradient id="photo-two" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9ed7d0"/>
+      <stop offset="1" stop-color="#537ea6"/>
+    </linearGradient>
+    <linearGradient id="photo-three" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f3d48f"/>
+      <stop offset="1" stop-color="#dc895f"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#background)"/>
+  <rect x="76" y="76" width="166" height="166" rx="20" fill="url(#photo-one)"/>
+  <rect x="270" y="76" width="166" height="108" rx="20" fill="url(#photo-two)"/>
+  <rect x="270" y="212" width="166" height="224" rx="20" fill="#6d82ff"/>
+  <rect x="76" y="270" width="166" height="166" rx="20" fill="url(#photo-three)"/>
+  <path d="M92 218 151 151l38 41 23-25 14 16v39H92Z" fill="#fff" fill-opacity=".72"/>
+  <circle cx="128" cy="123" r="15" fill="#fff" fill-opacity=".85"/>
+  <path d="m292 160 48-56 79 80H292Z" fill="#fff" fill-opacity=".55"/>
+  <path d="M286 405 349 318l32 39 27-29 12 13v59H286Z" fill="#fff" fill-opacity=".72"/>
+  <circle cx="324" cy="281" r="14" fill="#fff" fill-opacity=".85"/>
+</svg>
