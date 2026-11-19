@@ -1,12 +1,12 @@
-const CACHE = "photo-layout-studio-v2";
+const CACHE = "unfiltered";
 const CORE = [
-  "/",
-  "/index.html",
-  "/manifest.webmanifest",
-  "/pwa-icon.svg",
-  "/pwa-icon-192.png",
-  "/pwa-icon-512.png",
-  "/apple-touch-icon.png",
+  "./",
+  "./index.html",
+  "./manifest.webmanifest",
+  "./pwa-icon.svg",
+  "./pwa-icon-192.png",
+  "./pwa-icon-512.png",
+  "./apple-touch-icon.png",
 ];
 const BUILT_ASSET_PATTERN = /(?:src|href)=["']([^"']+\.(?:js|css))(?:\?[^"']*)?["']/g;
 
@@ -14,7 +14,7 @@ async function precacheAppShell() {
   const cache = await caches.open(CACHE);
   await cache.addAll(CORE);
 
-  const response = await fetch("/");
+  const response = await fetch("./");
   if (!response.ok) throw new Error(`Could not cache the app shell (${response.status}).`);
   const html = await response.text();
   const assets = [...html.matchAll(BUILT_ASSET_PATTERN)].map((match) => match[1]);
@@ -45,12 +45,12 @@ self.addEventListener("fetch", (event) => {
         const response = await fetch(request);
         if (response.ok) {
           const cache = await caches.open(CACHE);
-          await cache.put("/", response.clone());
-          await cache.put("/index.html", response.clone());
+          await cache.put("./", response.clone());
+          await cache.put("./index.html", response.clone());
         }
         return response;
       } catch {
-        const cachedPage = await caches.match(request) || await caches.match("/");
+        const cachedPage = await caches.match(request) || await caches.match("./");
         if (cachedPage) return cachedPage;
         throw new Error("The app shell is not cached yet. Open Photo Layout Studio online once before using it offline.");
       }
